@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   protect_from_forgery with: :exception
+  # skip_before_action :verify_authenticity_token
 
   around_action :in_time_zone_and_locale, if: :current_user
   before_action :require_login
